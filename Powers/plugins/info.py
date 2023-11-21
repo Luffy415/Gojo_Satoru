@@ -137,26 +137,26 @@ async def user_info(c: Gojo, user, already=False):
         last_date = "User is offline"
 
     caption = f"""
-<b><i><u>⚡️ Extracted User info From Telegram ⚡️</b></i></u>
+<b><i><u>⚡️ ᴇxᴛʀᴀᴄᴛᴇᴅ ᴜsᴇʀ ɪɴғᴏ ғʀᴏᴍ ᴛᴇʟᴇɢʀᴀᴍ ⚡️</b></i></u>
 
-<b>🆔 User ID</b>: <code>{user_id}</code>
-<b>📎 Link To Profile</b>: <a href='tg://user?id={user_id}'>Click Here🚪</a>
-<b>🫵 Mention</b>: {mention}
-<b>🗣 First Name</b>: <code>{first_name}</code>
-<b>🔅 Second Name</b>: <code>{last_name}</code>
-<b>🔍 Username</b>: {("@" + username) if username else "NA"}
-<b>✍️ Bio</b>: `{about}`
-<b>🧑‍💻 Support</b>: {is_support}
-<b>🥷 Support user type</b>: <code>{omp}</code>
-<b>💣 Gbanned</b>: {gban}
-<b>☠️ Gban reason</b>: <code>{reason}</code>
-<b>🌐 DC ID</b>: {dc_id}
-<b>✋ RESTRICTED</b>: {is_restricted}
-<b>✅ VERIFIED</b>: {is_verified}
-<b>❌ FAKE</b> : {is_fake}
-<b>⚠️ SCAM</b> : {is_scam} 
-<b>🤖 BOT</b>: {is_bot}
-<b>👀 Last seen</b>: <code>{last_date}</code>
+<b>🆔 ᴜsᴇʀ ɪᴅ</b>: <code>{user_id}</code>
+<b>📎 ʟɪɴᴋ ᴛᴏ ᴘʀᴏғɪʟᴇ</b>: <a href='tg://user?id={user_id}'>ᴄʟɪᴄᴋ ʜᴇʀᴇ 🚪</a>
+<b>🫵 ᴍᴇɴᴛɪᴏɴ</b>: {mention}
+<b>🗣 ғɪʀsᴛ ɴᴀᴍᴇ</b>: <code>{first_name}</code>
+<b>🔅 sᴇᴄᴏɴᴅ ɴᴀᴍᴇ</b>: <code>{last_name}</code>
+<b>🔍 ᴜsᴇʀɴᴀᴍᴇ</b>: {("@" + username) if username else "NA"}
+<b>✍️ ʙɪᴏ</b>: `{about}`
+<b>🧑‍💻 sᴜᴘᴘᴏʀᴛ</b>: {is_support}
+<b>🥷 sᴜᴘᴘᴏʀᴛ ᴜsᴇʀ ᴛʏᴘᴇ</b>: <code>{omp}</code>
+<b>💣 ɢʙᴀɴɴᴇᴅ</b>: {gban}
+<b>☠️ ɢʙᴀɴ ʀᴇᴀsᴏɴ</b>: <code>{reason}</code>
+<b>🌐 ᴅᴄ ɪᴅ</b>: {dc_id}
+<b>✋ ʀᴇsᴛʀɪᴄᴛᴇᴅ</b>: {is_restricted}
+<b>✅ ᴠᴇʀɪғɪᴇᴅ</b>: {is_verified}
+<b>❌ ғᴀᴋᴇ</b> : {is_fake}
+<b>⚠️ sᴄᴀᴍ</b> : {is_scam} 
+<b>🤖 ʙᴏᴛ</b>: {is_bot}
+<b>👀 ʟᴀsᴛ sᴇᴇɴ</b>: <code>{last_date}</code>
 
 """
 
@@ -213,24 +213,24 @@ async def chat_info(c: Gojo, chat, already=False):
     linked_chat = chat.linked_chat
 
     caption = f"""
-🔰 <b>CHAT INFO</b> 🔰
+🔰 <b>ᴄʜᴀᴛ ɪɴғ</b> 🔰
 
-<b>🆔 ID</b>: <code>{chat_id}</code>
-<b>🚀 Chat Title</b>: {title}
-<b>✨ Chat Type</b>: {type_}
-<b>🌐 DataCentre ID</b>: {dc_id}
-<b>🔍 Username</b>: {("@" + username) if username else "NA"}
-<b>⚜️ Administrators</b>: {total_admin}
-<b>🤖 Bots</b>: {total_bot}
-<b>🚫 Banned</b>: {total_banned}
-<b>⚜️ Admin 🤖 Bots</b>: {total_bot_admin}
-<b>⁉️ Scam</b>: {is_scam}
-<b>❌ Fake</b>: {is_fake}
-<b>✋ Restricted</b>: {is_restricted}
-<b>👨🏿‍💻 Description</b>: <code>{description}</code>
-<b>👪 Total members</b>: {members}
-<b>🚫 Has Protected Content</b>: {can_save}
-<b>🔗 Linked Chat</b>: <code>{linked_chat.id if linked_chat else "Not Linked"}</code>
+<b>🆔 ɪᴅ</b>: <code>{chat_id}</code>
+<b>🚀 ᴄʜᴀᴛ ᴛɪᴛʟᴇ</b>: {title}
+<b>✨ ᴄʜᴀᴛ ᴛʏᴏᴇ</b>: {type_}
+<b>🌐 ᴅᴀᴛᴀᴄᴇɴᴛʀᴇ(ᴅʙ) ɪᴅ</b>: {dc_id}
+<b>🔍 ᴜsᴇʀɴᴀᴍᴇ</b>: {("@" + username) if username else "NA"}
+<b>⚜️ ᴀᴅᴍɪɴs</b>: {total_admin}
+<b>🤖 ʙᴏᴛs</b>: {total_bot}
+<b>🚫 ʙᴀɴɴᴇᴅ ᴜsᴇʀs</b>: {total_banned}
+<b>⚜️ ᴀᴅᴍɪɴ 🤖 ʙɪᴛs</b>: {total_bot_admin}
+<b>⁉️ sᴄᴀᴍ</b>: {is_scam}
+<b>❌ ғᴀᴋᴇ</b>: {is_fake}
+<b>✋ ʀᴇsᴛʀɪᴄᴛᴇᴅ</b>: {is_restricted}
+<b>👨🏿‍💻 ᴅᴇsᴄʀɪᴘᴛɪᴏɴ</b>: <code>{description}</code>
+<b>👪 ᴛᴏᴛᴀʟ ᴍᴇᴍʙᴇʀs: {members}
+<b>🚫 ʜᴀs ᴘʀᴏᴛᴇᴄᴛᴇᴅ ᴄᴏɴᴛᴇɴᴛ/b>: {can_save}
+<b>🔗 ʟɪɴᴋʀᴅ ᴄʜᴀᴛ</b>: <code>{linked_chat.id if linked_chat else "Not Linked"}</code>
 
 """
 
