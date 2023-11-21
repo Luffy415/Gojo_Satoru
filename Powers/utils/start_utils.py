@@ -39,46 +39,20 @@ async def gen_start_kb(q: Message or CallbackQuery):
         [
             [
                 (
-                    "➕ Add me to a chat!",
-                    f"https://t.me/{Config.BOT_USERNAME}?startgroup=new",
-                    "url",
+                    "ʜᴇʟᴘ ❔", "commands"
                 ),
                 (
-                    "Support 👥",
-                    f"https://t.me/{SUPPORT_GROUP}",
-                    "url",
-                ),
-            ],
-            [
-                (
-                    "📚 Commands & Help", "commands"
-                ),
-                (
-                    "👾 Bot info",
-                    "bot_curr_info"
-                )
-            ],
-            [
-                (
-                    "🗃️ Source Code",
-                    "https://github.com/Gojo-Bots/Gojo_Satoru",
-                    "url",
-                ),
-                (
-                    "Owner ❤️",
+                    "ᴅᴇᴠᴇʟᴏᴘᴇʀ 👑",
                     Config.OWNER_ID,
                     "user_id",
                 ),
             ],
             [
+            ],
+            [
                 (
-                    "Essential",
-                    "https://t.me/+PcVYvdzNt4E1YjM1",
-                    "url",
-                ),
-                (
-                    "Powered by",
-                    f"https://{Config.SUPPORT_CHANNEL}.t.me",
+                    "⚓ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ⚓",
+                    "https://t.me/GroupNavigatorBot?startgroup=true,
                     "url",
                 ),
             ],
@@ -272,11 +246,7 @@ async def get_help_msg(m: Message or CallbackQuery, help_option: str):
         else:
             mes = m
         help_msg = f"""
-Hey **[{mes.from_user.first_name}](http://t.me/{mes.from_user.username})**!I am Gojo✨.
-I'm here to help you manage your groups!
-Commands available:
-× /start: Start the bot
-× /help: Give's you this message."""
+ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴꜱ ʙᴇʟᴏᴡ ᴛᴏ ɢᴇᴛ ᴅᴏᴄᴜᴍᴇɴᴛᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ꜱᴘᴇᴄɪꜰɪᴄ ᴍᴏᴅᴜʟᴇꜱ...."""
         ou = await gen_cmds_kb(m)
         help_kb = ikb(ou, True)
 
