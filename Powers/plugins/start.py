@@ -237,7 +237,7 @@ async def help_menu(_, m: Message):
             msg = f"""
 ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴꜱ ʙᴇʟᴏᴡ ᴛᴏ ɢᴇᴛ ᴅᴏᴄᴜᴍᴇɴᴛᴀᴛɪᴏɴ ᴀʙᴏᴜᴛ ꜱᴘᴇᴄɪꜰɪᴄ ᴍᴏᴅᴜʟᴇꜱ....
 """
-          else:
+        else:
             keyboard = InlineKeyboardMarkup(
               [
                 [
