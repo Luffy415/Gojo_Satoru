@@ -52,7 +52,7 @@ async def gen_start_kb(q: Message or CallbackQuery):
             [
                 (
                     "⚓ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ⚓",
-                    "https://t.me/GroupNavigatorBot?startgroup=true,
+                    "https://t.me/GroupNavigatorBot?startgroup=true",
                     "url",
                 ),
             ],
