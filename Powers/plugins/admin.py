@@ -548,7 +548,7 @@ async def setgpic(c: Gojo, m: Message):
     remove(photo)
 
 
-__PLUGIN__ = "ᴀᴅᴍɪɴ"
+__PLUGIN__ = "Admin"
 __alt_name__ = [
     "admins",
     "promote",
