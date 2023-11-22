@@ -138,7 +138,7 @@ Gojo supports a large number of formatting options to make your messages more ex
     return
 
 
-__PLUGIN__ = "formatting"
+__PLUGIN__ = "Fᴏʀᴍᴀᴛᴛɪɴɢ"
 
 __alt_name__ = ["formatting", "markdownhelp", "markdown"]
 __buttons__ = [
