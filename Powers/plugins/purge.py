@@ -117,7 +117,7 @@ async def del_msg(c: Gojo, m: Message):
     return
 
 
-__PLUGIN__ = "purges"
+__PLUGIN__ = "Pᴜʀɢᴇ"
 
 __alt_name__ = ["purge", "del", "spurge"]
 
