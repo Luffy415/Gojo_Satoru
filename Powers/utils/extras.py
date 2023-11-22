@@ -640,6 +640,11 @@ NO       NO   NONONO            NONO
 ]
 
 StartPic = [
+    "https://telegra.ph/file/c102d529b796c9832d1c4.jpg",
+    "https://telegra.ph/file/1c1af399ba5e92013a6bc.jpg",
+]
+
+StartPic2 = [
     "https://te.legra.ph/file/98f45051aa26391dd9e67.jpg",
     "https://te.legra.ph/file/674b41488884ae4def0cb.jpg",
     "https://te.legra.ph/file/481d3286b4dffe97fd7b5.jpg",
