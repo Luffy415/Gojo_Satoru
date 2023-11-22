@@ -901,8 +901,9 @@ async def ban_usr(c: Gojo, m: Message):
         await m.chat.ban_member(user_id)
         banned = await mention_html(user_first_name, user_id)
         if not m.reply_to_message:
-            txt = f"<b><u>ʙᴀɴ ᴇᴠᴇɴᴛ!!!</u></b>!\n\nʙᴀɴɴᴇᴅ ᴜsᴇʀ : {m.reply_to_message.from_user.mention}  \n ʙᴀɴɴᴇᴅ ʙʏ : {m.from_user.mention}"
+            m.edit('Reply to a user to ban them!')
         else:
+            txt = f"<b><u>ʙᴀɴ ᴇᴠᴇɴᴛ!!!</u></b>!\n\nʙᴀɴɴᴇᴅ ᴜsᴇʀ : {m.reply_to_message.from_user.mention}  \n ʙᴀɴɴᴇᴅ ʙʏ : {m.from_user.mention}"
             if reason:
                 txt += f"\n<b>ʀᴇᴀsᴏɴ</b>: {reason}"
 
