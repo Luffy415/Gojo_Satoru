@@ -649,7 +649,7 @@ async def unmutebutton(c: Gojo, q: CallbackQuery):
     return
 
 
-__PLUGIN__ = "muting"
+__PLUGIN__ = "Mᴜᴛɪɴɢ"
 
 __alt_name__ = [
     "mute",
