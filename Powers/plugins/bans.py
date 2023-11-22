@@ -821,27 +821,27 @@ async def dban_usr(c: Gojo, m: Message):
             except Exception:
                 await c.send_message(m.chat.id,txt,enums.ParseMode.HTML,reply_markup=keyboard)
                 await c.send_messagea(MESSAGE_DUMP,f"#REMOVE from BAN_GIFS\n{animm}")
-        except ChatAdminRequired:
-            await m.reply_text(text="I'm not admin or I don't have rights.")
-        except PeerIdInvalid:
-            await m.reply_text(
-                "I have not seen this user yet...!\nMind forwarding one of their message so I can recognize them?",
-            )
-        except UserAdminInvalid:
-            await m.reply_text(
-                text="Cannot act on this user, maybe I wasn't the one who changed their permissions."
-            )
-        except RightForbidden:
-            await m.reply_text(text="I don't have enough rights to ban this user.")
-        except RPCError as ef:
-            await m.reply_text(
-                text=f"""Some error occured, report it using `/bug`
+    except ChatAdminRequired:
+        await m.reply_text(text="I'm not admin or I don't have rights.")
+    except PeerIdInvalid:
+        await m.reply_text(
+            "I have not seen this user yet...!\nMind forwarding one of their message so I can recognize them?",
+        )
+    except UserAdminInvalid:
+        await m.reply_text(
+            text="Cannot act on this user, maybe I wasn't the one who changed their permissions."
+        )
+    except RightForbidden:
+        await m.reply_text(text="I don't have enough rights to ban this user.")
+    except RPCError as ef:
+        await m.reply_text(
+            text=f"""Some error occured, report it using `/bug`
 
-        <b>Error:</b> <code>{ef}</code>"""
-            )
-            LOGGER.error(ef)
-            LOGGER.error(format_exc())
-        return
+      <b>Error:</b> <code>{ef}</code>"""
+        )
+        LOGGER.error(ef)
+        LOGGER.error(format_exc())
+    return
 
 
 @Gojo.on_message(command("ban") & restrict_filter)
