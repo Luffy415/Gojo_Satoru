@@ -267,7 +267,7 @@ async def get_image_search(_, m: Message):
     except Exception:
         await ab.edit("Error occurred while sending images. Please try again.")
 
-__PLUGIN__ = "search"
+__PLUGIN__ = "Sᴇᴀʀᴄʜ"
 
 
 __alt_name__ = [
