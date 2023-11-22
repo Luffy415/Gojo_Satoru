@@ -293,7 +293,7 @@ async def filters_watcher(c: Gojo, m: Message):
     return
 
 
-__PLUGIN__ = "filters"
+__PLUGIN__ = "Fɪʟᴛᴇʀs"
 
 _DISABLE_CMDS_ = ["filters"]
 
