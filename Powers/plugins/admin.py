@@ -191,7 +191,7 @@ async def fullpromote_usr(c: Gojo, m: Message):
         await m.chat.promote_member(user_id=user_id, privileges=bot.privileges)
         title = ""
         if m.chat.type in [ChatType.SUPERGROUP, ChatType.GROUP]:
-            title = "Gojo"  # Default fullpromote title
+            title = "Zen"  # Default fullpromote title
             if len(m.text.split()) == 3 and not m.reply_to_message:
                 title = " ".join(m.text.split()[2:16]) # trim title to 16 characters
             elif len(m.text.split()) >= 2 and m.reply_to_message:
@@ -206,11 +206,11 @@ async def fullpromote_usr(c: Gojo, m: Message):
                 LOGGER.error(e)
                 LOGGER.error(format_exc())
         LOGGER.info(
-            f"{m.from_user.id} fullpromoted {user_id} in {m.chat.id} with title '{title}'",
+            f"__**ғᴜʟʟᴘʀᴏᴍᴏᴛᴇᴅ ᴜsᴇʀ!!!**__\n\nᴜsᴇʀ : {user_id}\nᴘʀᴏᴍᴏᴛᴇᴅ ʙʏ : {m.from_user.id}\nᴘʀᴏᴍᴏᴛᴇᴅ ɪɴ : {m.chat.id}\nᴛɪᴛʟᴇ : {title}",
         )
         await m.reply_text(
             (
-                "{promoter} promoted {promoted} in chat <b>{chat_title}</b> with full rights!"
+                "__**ғᴜʟʟᴘʀᴏᴍᴏᴛᴇᴅ ᴜsᴇʀ!!!**__\n\nᴜsᴇʀ : {promoted}\nᴘʀᴏᴍᴏᴛᴇᴅ ʙʏ : {promoter}\nᴘʀᴏᴍᴏᴛᴇᴅ ɪɴ : {chat_title}"
             ).format(
                 promoter=(await mention_html(m.from_user.first_name, m.from_user.id)),
                 promoted=(await mention_html(user_first_name, user_id)),
