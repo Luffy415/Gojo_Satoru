@@ -419,7 +419,7 @@ async def reporting_query(c: Gojo, m: Message):
     await c.send_message(OWNER_ID,f"New bug report\n{ppost}",disable_web_page_preview=True)
     return
 
-__PLUGIN__ = "utils"
+__PLUGIN__ = "Uᴛɪʟs"
 _DISABLE_CMDS_ = ["paste", "wiki", "id", "gifid", "tr", "github", "git", "bug"]
 __alt_name__ = ["util", "misc", "tools"]
 
