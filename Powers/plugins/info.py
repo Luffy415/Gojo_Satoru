@@ -358,7 +358,7 @@ async def chat_info_func(c: Gojo, message: Message):
     return
 
 
-__PLUGIN__ = "info"
+__PLUGIN__ = "Iɴғᴏ"
 __alt_name__ = [
     "info",
     "chinfo",
