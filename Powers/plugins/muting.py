@@ -15,7 +15,6 @@ from Powers.supports import get_support_staff
 from Powers.utils.caching import ADMIN_CACHE, admin_cache_reload
 from Powers.utils.custom_filters import command, restrict_filter
 from Powers.utils.extract_user import extract_user
-from Powers.utils.extras import MUTE_GIFS
 from Powers.utils.parser import mention_html
 from Powers.utils.string import extract_time
 from Powers.vars import Config
@@ -112,7 +111,6 @@ async def tmute_usr(c: Gojo, m: Message):
             )
         except Exception:
             await m.reply_text(txt,reply_markup=keyboard, reply_to_message_id=r_id)
-            await c.send_message(MESSAGE_DUMP,f"#REMOVE from MUTE_GIFS\n{mutt}")
     except ChatAdminRequired:
         await m.reply_text(text="I'm not admin or I don't have rights.")
     except RightForbidden:
@@ -220,7 +218,6 @@ async def dtmute_usr(c: Gojo, m: Message):
             )
         except Exception:
             await m.reply_text(txt,reply_markup=keyboard)
-            await c.send_message(MESSAGE_DUMP,f"#REMOVE from MUTE_GIFS\n{mutt}")
     except ChatAdminRequired:
         await m.reply_text(text="I'm not admin or I don't have rights.")
     except RightForbidden:
@@ -388,7 +385,6 @@ async def mute_usr(c: Gojo, m: Message):
                 ],
             ],
         )
-        mutt = choice(MUTE_GIFS)
         try:
             await m.reply(
                 caption=txt,
@@ -397,7 +393,6 @@ async def mute_usr(c: Gojo, m: Message):
             )
         except Exception:
             await m.reply_text(txt,reply_markup=keyboard, reply_to_message_id=r_id)
-            await c.send_message(MESSAGE_DUMP,f"#REMOVE from MUTE_GIFS\n{mutt}")
     except ChatAdminRequired:
         await m.reply_text(text="I'm not admin or I don't have rights.")
     except RightForbidden:
@@ -544,7 +539,6 @@ async def dmute_usr(c: Gojo, m: Message):
                 ],
             ],
         )
-        mutt = choice(MUTE_GIFS)
         try:
             await m.reply(
                 caption=txt,
@@ -552,7 +546,6 @@ async def dmute_usr(c: Gojo, m: Message):
             )
         except Exception:
             await m.reply_text(txt,reply_markup=keyboard)
-            await c.send_message(MESSAGE_DUMP,f"#REMOVE from MUTE_GIFS\n{mutt}")
     except ChatAdminRequired:
         await m.reply_text(text="I'm not admin or I don't have rights.")
     except RightForbidden:

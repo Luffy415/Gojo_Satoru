@@ -599,23 +599,6 @@ KICK_GIFS = [
 ]
 
 
-MUTE_GIFS = [
-    "https://media.giphy.com/media/MpCxz9VLh6t8ceRb0r/giphy.gif",
-    "https://media.giphy.com/media/HWl1atKEPAWcw/giphy.gif",
-    "https://media.giphy.com/media/1xkynOSsb8eFpbEood/giphy.gif",
-    "https://media.giphy.com/media/LmUAM5ImMNZd0nnkvn/giphy.gif",
-    "https://media.giphy.com/media/JNlXHSSioDe7YGTC7D/giphy.gif",
-    "https://media.giphy.com/media/t0iSe43jX8JH0Hb95a/giphy.gif",
-    "https://media.giphy.com/media/P4CXV70NTC0umRI61S/giphy.gif",
-    "https://media.giphy.com/media/Z0WPxDF7zpIHVPrYUN/giphy.gif",
-    "https://media.giphy.com/media/gJS1pGTbXlSCWUe2pg/giphy.gif",
-    "https://media.giphy.com/media/SIoetMN7j96O5perEV/giphy.gif",
-    "https://media.giphy.com/media/PBZrH2uy9E5rPruuCX/giphy.gif",
-    "https://media.giphy.com/media/Cew2qzlug9t3ACYrD5/giphy.gif",
-    "https://media.giphy.com/media/PtIm7eUGKYIZbknqsO/giphy.gif",
-    "https://media.giphy.com/media/EKbCY8OgdATSGBekxM/giphy.gif",
-]
-
 NOWYES = [
     """
 YES          YES              YESYES
