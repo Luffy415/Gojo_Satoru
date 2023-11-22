@@ -797,6 +797,9 @@ async def dban_usr(c: Gojo, m: Message):
         LOGGER.info(f"{m.from_user.id} dbanned {user_id} in {m.chat.id}")
         await m.reply_to_message.delete()
         await m.chat.ban_member(user_id)
+      if not m.reply_to_message:
+        await m.edit('Reply to a user')
+      else:
         txt = f"<b><u>ʙᴀɴ ᴇᴠᴇɴᴛ!!!</u></b>!\n\nʙᴀɴɴᴇᴅ ᴜsᴇʀ : {m.reply_to_message.from_user.mention}  \n ʙᴀɴɴᴇᴅ ʙʏ : {m.from_user.mention}"
         if reason:
             txt += f"\n<b>ʀᴇᴀsᴏɴ</b>: {reason}"
