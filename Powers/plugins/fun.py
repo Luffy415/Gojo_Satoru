@@ -203,7 +203,7 @@ async def weebify(_, m: Message):
     return
 
 
-__PLUGIN__ = "fun"
+__PLUGIN__ = "Fᴜɴ"
 
 _DISABLE_CMDS_ = [
     "weebify",
