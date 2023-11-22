@@ -235,7 +235,7 @@ async def switch_on_off(c:Gojo, q: CallbackQuery):
 
 
 
-__PLUGIN__ = "birthday"
+__PLUGIN__ = "Bɪʀᴛʜᴅᴀʏ"
 
 __HELP__ = """
 • /remember [reply to user] [DOB] : To registers user date of birth in my database. If not replied to user then the DOB givien will be treated as yours
