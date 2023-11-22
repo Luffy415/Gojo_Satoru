@@ -328,7 +328,7 @@ async def download_instareels(c: Gojo, m: Message):
                 await m.reply_text("I am unable to reach to this reel.")
                 return
 
-__PLUGIN__ = "web support"
+__PLUGIN__ = "Wᴇʙ sᴜᴘᴘᴏʀᴛ"
 
 __HELP__ = """
 **Available commands**
