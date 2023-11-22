@@ -16,7 +16,7 @@ from Powers.database.approve_db import Approve
 from Powers.database.flood_db import Floods
 from Powers.supports import get_support_staff
 from Powers.utils.custom_filters import admin_filter, command
-from Powers.utils.extras import BAN_GIFS, KICK_GIFS, MUTE_GIFS
+from Powers.utils.extras import BAN_GIFS, KICK_GIFS
 from Powers.utils.kbhelpers import ikb
 from Powers.vars import Config
 
@@ -487,8 +487,7 @@ async def flood_watcher(c: Gojo, m: Message):
                         ],
                     )
                     txt = "Don't dare to spam here if I am around! Nothing can escape my 6 eyes\nAction: Muted\nReason: Spaming"
-                    await m.reply_animation(
-                        animation=str(choice(MUTE_GIFS)),
+                    await m.reply(
                         caption=txt,
                         reply_markup=keyboard,
                     )
