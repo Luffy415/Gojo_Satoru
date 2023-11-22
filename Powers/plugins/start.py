@@ -266,11 +266,11 @@ async def give_curr_info(c: Gojo, q: CallbackQuery):
     delta_ping = time() - start
     await x.delete()
     txt = f"""
-🏓 Ping : {delta_ping * 1000:.3f} ms
-📈 Uptime : {up}
-🤖 Bot's version: {VERSION}
-🐍 Python's version: {PYTHON_VERSION}
-🔥 Pyrogram's version : {PYROGRAM_VERSION}
+🏓 ᴘɪɴɢ : {delta_ping * 1000:.3f} ms
+📈 ᴜᴘᴛɪᴍᴇ : {up}
+🤖 ʙᴏᴛ ᴠᴇʀsɪᴏɴ: {VERSION}
+🐍 ᴘʏᴛʜᴏɴ ᴠᴇʀsɪᴏɴ: {PYTHON_VERSION}
+🔥 ᴘʏʀᴏɢʀᴀᴍ ᴠᴇʀsɪᴏɴ : {PYROGRAM_VERSION}
     """
     await q.answer(txt, show_alert=True)
     return
