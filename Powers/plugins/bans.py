@@ -572,7 +572,7 @@ async def dkick_usr(c: Gojo, m: Message):
         admin = await mention_html(m.from_user.first_name, m.from_user.id)
         kicked = await mention_html(user_first_name, user_id)
         chat_title = m.chat.title
-        txt = f"{admin} kicked {kicked} in <b>{chat_title}</b>!"
+        txt = f"<b>ᴋɪᴄᴋᴇᴅ</b> {kicked} \n» ɪɴ <b>{chat_title}</b> \nᴋɪᴄᴋᴇᴅ ʙʏ {admin}!"
         if reason:
             txt += f"\n<b>Reason</b>: {reason}"
         kickk = choice(KICK_GIFS)
@@ -650,9 +650,9 @@ async def unban_usr(c: Gojo, m: Message):
         admin = m.from_user.mention
         unbanned = await mention_html(user_first_name, user_id)
         chat_title = m.chat.title
-        txt = f"{admin} unbanned {unbanned} in chat <b>{chat_title}</b>!"
+        txt = f"<b><u>ᴜɴʙᴀɴɴᴇᴅ</u></b> {unbanned}"
         if reason:
-            txt += f"\n<b>Reason</b>: {reason}"
+            txt += f"\n<b>ʀᴇᴀsᴏɴ</b>: {reason}"
         await m.reply_text(txt)
     except ChatAdminRequired:
         await m.reply_text(text="I'm not admin or I don't have rights.")
@@ -797,14 +797,14 @@ async def dban_usr(c: Gojo, m: Message):
         LOGGER.info(f"{m.from_user.id} dbanned {user_id} in {m.chat.id}")
         await m.reply_to_message.delete()
         await m.chat.ban_member(user_id)
-        txt = f"{m.from_user.mention} banned {m.reply_to_message.from_user.mention} in <b>{m.chat.title}</b>!"
+        txt = f"<b><u>ʙᴀɴ ᴇᴠᴇɴᴛ!!!</u></b>!\n\nʙᴀɴɴᴇᴅ ᴜsᴇʀ : {m.reply_to_message.from_user.mention}  \n ʙᴀɴɴᴇᴅ ʙʏ : {m.from_user.mention}"
         if reason:
-            txt += f"\n<b>Reason</b>: {reason}"
+            txt += f"\n<b>ʀᴇᴀsᴏɴ</b>: {reason}"
         keyboard = InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "Unban",
+                        "ᴜɴʙᴀɴ 🔓",
                         callback_data=f"unban_={user_id}",
                     ),
                 ],
@@ -870,10 +870,10 @@ async def ban_usr(c: Gojo, m: Message):
 
     if user_id in SUPPORT_STAFF:
         await m.reply_text(
-            text="This user is in my support staff, cannot restrict them."
+            text="ᴛʜɪs ᴜsᴇʀ ɪs ɪɴ ᴍʏ sᴜᴅᴏ ʟɪsᴛ, ᴄᴀɴɴᴏᴛ ʀᴇsᴛʀɪᴄᴛ ᴛʜᴇᴍ."
         )
         LOGGER.info(
-            f"{m.from_user.id} trying to ban {user_id} (SUPPORT_STAFF) in {m.chat.id}",
+            f"{m.from_user.id} ɪs ᴛʀʏɪɴɢ ᴛᴏ ʙᴀɴ {user_id} (sᴜᴅᴏ_ᴜsᴇʀ)",
         )
         await m.stop_propagation()
 
@@ -900,15 +900,15 @@ async def ban_usr(c: Gojo, m: Message):
         LOGGER.info(f"{m.from_user.id} banned {user_id} in {m.chat.id}")
         await m.chat.ban_member(user_id)
         banned = await mention_html(user_first_name, user_id)
-        txt = f"{m.from_user.mention} banned {banned} in <b>{m.chat.title}</b>!"
+        txt = f"<b><u>ʙᴀɴ ᴇᴠᴇɴᴛ!!!</u></b>!\n\nʙᴀɴɴᴇᴅ ᴜsᴇʀ : {m.reply_to_message.from_user.mention}  \n ʙᴀɴɴᴇᴅ ʙʏ : {m.from_user.mention}"
         if reason:
-            txt += f"\n<b>Reason</b>: {reason}"
+            txt += f"\n<b>ʀᴇᴀsᴏɴ</b>: {reason}"
 
         keyboard = InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "Unban",
+                        "ᴜɴʙᴀɴ 🔓",
                         callback_data=f"unban_={user_id}",
                     ),
                 ],
