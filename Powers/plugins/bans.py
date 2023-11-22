@@ -89,7 +89,7 @@ async def tban_usr(c: Gojo, m: Message):
         await m.chat.ban_member(
             user_id,
             until_date=bantime)
-        t_t=f"{admin} banned {banned} in <b>{chat_title}</b>!",
+        t_t=f"<b><u>ʙᴀɴ ᴇᴠᴇɴᴛ!!!</u></b>!\n\nʙᴀɴɴᴇᴅ ᴜsᴇʀ : {banned} \n ʙᴀɴɴᴇᴅ ʙʏ : {admin}",
         txt = t_t
         if type(t_t) is tuple:
             txt = t_t[0] # Done this bcuz idk why t_t is tuple type data. SO now if it is tuple this will get text from it
@@ -306,16 +306,16 @@ async def dtban_usr(c: Gojo, m: Message):
         LOGGER.info(f"{m.from_user.id} dtbanned {user_id} in {m.chat.id}")
         await m.chat.ban_member(user_id, until_date=bantime)
         await m.reply_to_message.delete()
-        txt = f"{admin} banned {banned} in <b>{chat_title}</b>!"
+        txt = f"<b><u>ʙᴀɴ ᴇᴠᴇɴᴛ!!!</u></b>!\n\nʙᴀɴɴᴇᴅ ᴜsᴇʀ : {banned} \n ʙᴀɴɴᴇᴅ ʙʏ : {admin}"
         if reason:
-            txt += f"\n<b>Reason</b>: {reason}"
+            txt += f"\n<b>ʀᴇᴀsᴏɴ</b>: {reason}"
         if bantime:
-            txt += f"\n<b>Banned for</b>: {time_val}"
+            txt += f"\n<b>ʙᴀɴɴᴇᴅ ᴛɪʟʟ</b>: {time_val}"
         keyboard = InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "Unban",
+                        "ᴜɴʙᴀɴ 🔓",
                         callback_data=f"unban_={user_id}",
                     ),
                 ],
