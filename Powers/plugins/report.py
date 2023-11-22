@@ -202,7 +202,7 @@ async def report_buttons(c: Gojo, q: CallbackQuery):
     return
 
 
-__PLUGIN__ = "reporting"
+__PLUGIN__ = "Rᴇᴘᴏʀᴛɪɴɢ"
 
 __alt_name__ = ["reports", "report"]
 
