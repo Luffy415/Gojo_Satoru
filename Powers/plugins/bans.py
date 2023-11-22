@@ -797,30 +797,27 @@ async def dban_usr(c: Gojo, m: Message):
         LOGGER.info(f"{m.from_user.id} dbanned {user_id} in {m.chat.id}")
         await m.reply_to_message.delete()
         await m.chat.ban_member(user_id)
-        if not m.reply_to_message:
-            await m.edit('Reply to a user to ban them!')
-        else:
-            txt = f"<b><u>ʙᴀɴ ᴇᴠᴇɴᴛ!!!</u></b>!\n\nʙᴀɴɴᴇᴅ ᴜsᴇʀ : {m.reply_to_message.from_user.mention}  \n ʙᴀɴɴᴇᴅ ʙʏ : {m.from_user.mention}"
-            if reason:
-                txt += f"\n<b>ʀᴇᴀsᴏɴ</b>: {reason}"
-            keyboard = InlineKeyboardMarkup(
+        txt = f"<b><u>ʙᴀɴ ᴇᴠᴇɴᴛ!!!</u></b>!\n\nʙᴀɴɴᴇᴅ ᴜsᴇʀ : {m.reply_to_message.from_user.mention}  \n ʙᴀɴɴᴇᴅ ʙʏ : {m.from_user.mention}"
+        if reason:
+            txt += f"\n<b>ʀᴇᴀsᴏɴ</b>: {reason}"
+        keyboard = InlineKeyboardMarkup(
+            [
                 [
-                    [
-                        InlineKeyboardButton(
-                            "ᴜɴʙᴀɴ 🔓",
-                            callback_data=f"unban_={user_id}",
-                        ),
-                    ],
+                    InlineKeyboardButton(
+                        "ᴜɴʙᴀɴ 🔓",
+                        callback_data=f"unban_={user_id}",
+                    ),
                 ],
+            ],
+        )
+        animm = choice(BAN_GIFS)
+        try:
+            await c.send_animation(
+                m.chat.id, animation=str(animm), caption=txt, reply_markup=keyboard
             )
-            animm = choice(BAN_GIFS)
-            try:
-                await c.send_animation(
-                    m.chat.id, animation=str(animm), caption=txt, reply_markup=keyboard
-                )
-            except Exception:
-                await c.send_message(m.chat.id,txt,enums.ParseMode.HTML,reply_markup=keyboard)
-                await c.send_messagea(MESSAGE_DUMP,f"#REMOVE from BAN_GIFS\n{animm}")
+        except Exception:
+            await c.send_message(m.chat.id,txt,enums.ParseMode.HTML,reply_markup=keyboard)
+            await c.send_messagea(MESSAGE_DUMP,f"#REMOVE from BAN_GIFS\n{animm}")
     except ChatAdminRequired:
         await m.reply_text(text="I'm not admin or I don't have rights.")
     except PeerIdInvalid:
@@ -903,38 +900,40 @@ async def ban_usr(c: Gojo, m: Message):
         LOGGER.info(f"{m.from_user.id} banned {user_id} in {m.chat.id}")
         await m.chat.ban_member(user_id)
         banned = await mention_html(user_first_name, user_id)
-        txt = f"<b><u>ʙᴀɴ ᴇᴠᴇɴᴛ!!!</u></b>!\n\nʙᴀɴɴᴇᴅ ᴜsᴇʀ : {m.reply_to_message.from_user.mention}  \n ʙᴀɴɴᴇᴅ ʙʏ : {m.from_user.mention}"
-        if reason:
-            txt += f"\n<b>ʀᴇᴀsᴏɴ</b>: {reason}"
+        if not m.reply_to_message:
+            txt = f"<b><u>ʙᴀɴ ᴇᴠᴇɴᴛ!!!</u></b>!\n\nʙᴀɴɴᴇᴅ ᴜsᴇʀ : {m.reply_to_message.from_user.mention}  \n ʙᴀɴɴᴇᴅ ʙʏ : {m.from_user.mention}"
+        else:
+            if reason:
+                txt += f"\n<b>ʀᴇᴀsᴏɴ</b>: {reason}"
 
-        keyboard = InlineKeyboardMarkup(
-            [
+            keyboard = InlineKeyboardMarkup(
                 [
-                    InlineKeyboardButton(
-                        "ᴜɴʙᴀɴ 🔓",
-                        callback_data=f"unban_={user_id}",
-                    ),
+                    [
+                        InlineKeyboardButton(
+                            "ᴜɴʙᴀɴ 🔓",
+                            callback_data=f"unban_={user_id}",
+                        ),
+                    ],
                 ],
-            ],
-        )
-        anim = choice(BAN_GIFS)
-        try:
-            await m.reply_animation(
-                reply_to_message_id=r_id,
-                animation=str(anim),
-                caption=txt,
-                reply_markup=keyboard,
-                parse_mode=enums.ParseMode.HTML,
             )
-        except Exception:
-            
-            await m.reply_text(
-                reply_to_message_id=r_id,
-                text=txt,
-                reply_markup=keyboard,
-                parse_mode=enums.ParseMode.HTML,
-            )
-            await c.send_message(MESSAGE_DUMP,f"#REMOVE from BAN_GFIS\n{anim}")
+            anim = choice(BAN_GIFS)
+            try:
+                await m.reply_animation(
+                    reply_to_message_id=r_id,
+                    animation=str(anim),
+                    caption=txt,
+                    reply_markup=keyboard,
+                    parse_mode=enums.ParseMode.HTML,
+                )
+            except Exception:
+                
+                await m.reply_text(
+                    reply_to_message_id=r_id,
+                    text=txt,
+                    reply_markup=keyboard,
+                    parse_mode=enums.ParseMode.HTML,
+                )
+                await c.send_message(MESSAGE_DUMP,f"#REMOVE from BAN_GFIS\n{anim}")
     except ChatAdminRequired:
         await m.reply_text(text="I'm not admin or I don't have rights.")
     except PeerIdInvalid:
