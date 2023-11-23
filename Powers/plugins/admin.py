@@ -312,7 +312,7 @@ async def promote_usr(c: Gojo, m: Message):
             f"__**ᴘʀᴏᴍᴏᴛᴇᴅ ᴜsᴇʀ!!!**__\n\nᴜsᴇʀ : {user_id}\nᴘʀᴏᴍᴏᴛᴇᴅ ʙʏ : {m.from_user.id}\nᴘʀᴏᴍᴏᴛᴇᴅ ɪɴ : {m.chat.id}\nᴛɪᴛʟᴇ : {title}",
         )
         await m.reply_text(
-            ("__**ғᴜʟʟᴘʀᴏᴍᴏᴛᴇᴅ ᴜsᴇʀ!!!**__\n\nᴜsᴇʀ : {promoted}\nᴘʀᴏᴍᴏᴛᴇᴅ ʙʏ : {promoter}\nᴘʀᴏᴍᴏᴛᴇᴅ ɪɴ : {chat_title}").format(
+            ("__**ᴘʀᴏᴍᴏᴛᴇᴅ ᴜsᴇʀ!!!**__\n\nᴜsᴇʀ : {promoted}\nᴘʀᴏᴍᴏᴛᴇᴅ ʙʏ : {promoter}\nᴘʀᴏᴍᴏᴛᴇᴅ ɪɴ : {chat_title}").format(
                 promoter=(await mention_html(m.from_user.first_name, m.from_user.id)),
                 promoted=(await mention_html(user_first_name, user_id)),
                 chat_title=f"{escape(m.chat.title)} title set to {title}"
