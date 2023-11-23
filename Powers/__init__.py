@@ -124,6 +124,7 @@ DEV = Config.DEV_USERS
 DEVS_USER = set(DEV)
 SUDO_USERS = Config.SUDO_USERS
 WHITELIST_USERS = Config.WHITELIST_USERS
+tbot = TelegramClient('botwa', API_ID, API_HASH).start(bot_token=BOT_TOKEN)
 
 
 
