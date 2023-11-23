@@ -40,8 +40,8 @@ async def adminlist_show(_, m: Message):
             note = "<i>Note:</i> These are cached values!"
         except KeyError:
             admin_list = await admin_cache_reload(m, "adminlist")
-            note = "<i>Note:</i> These are up-to-date values!"
-        adminstr = f"Admins in <b>{m.chat.title}</b>:" + "\n\n"
+            note = "<b><i><u>ɴᴏᴛᴇ:</u></i></b> ᴛʜᴇsᴇ ᴀʀᴇ ᴜᴘᴅᴀᴛᴇᴅ ᴠᴀʟᴜᴇs"
+        adminstr = f"ᴀᴅᴍɪɴs ɪɴ <b>{m.chat.title}</b>:" + "\n\n"
         bot_admins = [i for i in admin_list if (i[1].lower()).endswith("bot")]
         user_admins = [i for i in admin_list if not (i[1].lower()).endswith("bot")]
         # format is like: (user_id, username/name,anonyamous or not)
@@ -64,15 +64,15 @@ async def adminlist_show(_, m: Message):
             for admin in bot_admins
         ]
         mention_bots.sort(key=lambda x: x[1])
-        adminstr += "<b>User Admins:</b>\n"
+        adminstr += "<b>ᴜsᴇʀ ᴀᴅᴍɪɴs:</b>\n"
         adminstr += "\n".join(f"- {i}" for i in mention_users)
-        adminstr += "\n\n<b>Bots:</b>\n"
+        adminstr += "\n\n<b>ʙᴏᴛs:</b>\n"
         adminstr += "\n".join(f"- {i}" for i in mention_bots)
         await m.reply_text(adminstr + "\n\n" + note)
-        LOGGER.info(f"Adminlist cmd use in {m.chat.id} by {m.from_user.id}")
+        LOGGER.info(f"Aᴅᴍɪɴʟɪsᴛ cᴏᴍᴍᴀɴᴅ ᴜsᴇᴅ ɪɴ {m.chat.id} ʙʏ {m.from_user.id}")
     except Exception as ef:
         if str(ef) == str(m.chat.id):
-            await m.reply_text(text="Use /admincache to reload admins!")
+            await m.reply_text(text="Usᴇ /admincache ᴛᴏ ʀᴇʟᴏᴀᴅ ᴀᴅᴍɪɴs!")
         else:
             ef = str(ef) + f"{admin_list}\n"
             await m.reply_text(
@@ -99,7 +99,7 @@ async def zombie_clean(c: Gojo, m: Message):
     if zombie == 0:
         return await wait.edit_text("Group is clean!")
     return await wait.edit_text(
-        text=f"<b>{zombie}</b> Zombies found and has been banned!",
+        text=f"ʙᴀɴɴᴇᴅ <b>{zombie}</b> ᴢᴏᴍʙɪᴇs ɪs ʙᴀɴɴᴇᴅ!!",
     )
 
 
@@ -157,7 +157,7 @@ async def fullpromote_usr(c: Gojo, m: Message):
     global ADMIN_CACHE
     if len(m.text.split()) == 1 and not m.reply_to_message:
         await m.reply_text(
-            text="I can't promote nothing! Give me an username or user id or atleast reply to that user"
+            text="Give me an username or user id or atleast reply to that user"
         )
         return
     try:
@@ -191,7 +191,7 @@ async def fullpromote_usr(c: Gojo, m: Message):
         await m.chat.promote_member(user_id=user_id, privileges=bot.privileges)
         title = ""
         if m.chat.type in [ChatType.SUPERGROUP, ChatType.GROUP]:
-            title = "Zen"  # Default fullpromote title
+            title = "ᴀᴅᴍᴇᴍᴇ"  # Default fullpromote title
             if len(m.text.split()) == 3 and not m.reply_to_message:
                 title = " ".join(m.text.split()[2:16]) # trim title to 16 characters
             elif len(m.text.split()) >= 2 and m.reply_to_message:
@@ -214,9 +214,9 @@ async def fullpromote_usr(c: Gojo, m: Message):
             ).format(
                 promoter=(await mention_html(m.from_user.first_name, m.from_user.id)),
                 promoted=(await mention_html(user_first_name, user_id)),
-                chat_title=f"{escape(m.chat.title)} title set to {title}"
+                chat_title=f"{escape(m.chat.title)} ᴛɪᴛʟᴇ sᴇᴛ ᴛᴏ {title}"
                 if title
-                else f"{escape(m.chat.title)} title set to Default",
+                else f"{escape(m.chat.title)} ᴛɪᴛʟᴇ sᴇᴛ ᴛᴏ ᴅᴇғᴀᴜʟᴛ",
             ),
         )
         # If user is approved, disapprove them as they willbe promoted and get
@@ -232,9 +232,9 @@ async def fullpromote_usr(c: Gojo, m: Message):
         except KeyError:
             await admin_cache_reload(m, "promote_key_error")
     except ChatAdminRequired:
-        await m.reply_text(text="I'm not admin or I don't have rights......")
+        await m.reply_text(text="ɪ ᴀᴍ ɴᴏᴛ ᴀᴅᴍɪɴ ᴏʀ ɪ ᴅᴏɴ'ᴛ ʜᴀᴠᴇ ʀɪɢʜᴛs ᴏʀ ᴛʜᴇ ᴜsᴇʀ ɪs ᴀʟʀᴇᴀᴅʏ ᴀᴅᴍɪɴ.")
     except RightForbidden:
-        await m.reply_text(text="I don't have enough rights to promote this user.")
+        await m.reply_text(text="ɪ ᴅᴏɴ'ᴛ ʜᴀᴠᴇ ʀɪɢʜᴛs ᴛᴏ ᴘʀᴏᴍᴏᴛᴇ ᴛʜᴇ ᴜsᴇʀ.")
     except UserAdminInvalid:
         await m.reply_text(
             text="Cannot act on this user, maybe I wasn't the one who changed their permissions."
@@ -309,10 +309,10 @@ async def promote_usr(c: Gojo, m: Message):
                 LOGGER.error(e)
                 LOGGER.error(format_exc())
         LOGGER.info(
-            f"{m.from_user.id} promoted {user_id} in {m.chat.id} with title '{title}'",
+            f"__**ᴘʀᴏᴍᴏᴛᴇᴅ ᴜsᴇʀ!!!**__\n\nᴜsᴇʀ : {user_id}\nᴘʀᴏᴍᴏᴛᴇᴅ ʙʏ : {m.from_user.id}\nᴘʀᴏᴍᴏᴛᴇᴅ ɪɴ : {m.chat.id}\nᴛɪᴛʟᴇ : {title}",
         )
         await m.reply_text(
-            ("{promoter} promoted {promoted} in chat <b>{chat_title}</b>!").format(
+            ("__**ғᴜʟʟᴘʀᴏᴍᴏᴛᴇᴅ ᴜsᴇʀ!!!**__\n\nᴜsᴇʀ : {promoted}\nᴘʀᴏᴍᴏᴛᴇᴅ ʙʏ : {promoter}\nᴘʀᴏᴍᴏᴛᴇᴅ ɪɴ : {chat_title}").format(
                 promoter=(await mention_html(m.from_user.first_name, m.from_user.id)),
                 promoted=(await mention_html(user_first_name, user_id)),
                 chat_title=f"{escape(m.chat.title)} title set to {title}"
@@ -379,7 +379,7 @@ async def demote_usr(c: Gojo, m: Message):
             user_id=user_id,
             privileges=ChatPrivileges(can_manage_chat=False),
         )
-        LOGGER.info(f"{m.from_user.id} demoted {user_id} in {m.chat.id}")
+        LOGGER.info(f"__**ᴅᴇᴍᴏᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ**__\n\mᴅᴇᴍᴏᴛᴇᴅ : {user_id}\nᴅᴇᴍᴏᴛᴇᴅ ʙʏ : {m.from_user.id}\nᴅᴇᴍᴏᴛᴇᴅ ɪɴ : {m.chat.id}")
         # ----- Remove admin from cache -----
         try:
             admin_list = ADMIN_CACHE[m.chat.id]
@@ -389,7 +389,7 @@ async def demote_usr(c: Gojo, m: Message):
         except (KeyError, StopIteration):
             await admin_cache_reload(m, "demote_key_stopiter_error")
         await m.reply_text(
-            ("{demoter} demoted {demoted} in <b>{chat_title}</b>!").format(
+            ("<b><u><i>ᴅᴇᴍᴏᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟʟʏ</i></u></b>\n\nᴅᴇᴍᴏᴛᴇᴅ : {demoted}\nᴅᴇᴍᴏᴛᴇᴅ ʙʏ : {demoter}\nᴅᴇᴍᴏᴛᴇᴅ ɪɴ : {chat_title}").format(
                 demoter=(
                     await mention_html(
                         m.from_user.first_name,
@@ -586,5 +586,3 @@ __HELP__ = """
 
 **Example:**
 `/promote @username`: this promotes a user to admin."""
-
-
