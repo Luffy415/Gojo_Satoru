@@ -1,17 +1,10 @@
 import random
 
-from pyrogram import filters
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+from telethon import Button, events
 
-from Powers.bot_class import Gojo as Client
+from .. import telethn as asst
 
-
-
-
-BUTTON = InlineKeyboardMarkup([
-    [InlineKeyboardButton("ᴄʜᴀɴɴᴇʟ", url="https://t.me/ZenBotX")]
-])
-
+BUTTON = [[Button.url("ᴄʜᴀɴɴᴇʟ", "https://t.me/ZenBotX")]]
 HOT = "https://telegra.ph/file/daad931db960ea40c0fca.gif"
 SMEXY = "https://telegra.ph/file/a23e9fd851fb6bc771686.gif"
 LEZBIAN = "https://telegra.ph/file/5609b87f0bd461fc36acb.gif"
@@ -21,92 +14,99 @@ CUTIE = "https://64.media.tumblr.com/d701f53eb5681e87a957a547980371d2/tumblr_nbj
 BEAUTIFULL = "https://telegra.ph/file/37f85c796e49b0cc0e232.gif"
 HANDCY = "https://telegra.ph/file/fbbc734152df5411efc7c.gif"
 
-@Client.on_message(filters.command("horny"))
-async def horny(_, message):
-    user_id = message.from_user.id
-    user_name = message.from_user.first_name
+
+@asst.on(events.NewMessage(pattern="/horny ?(.*)"))
+async def horny(e):
+    user_id = e.sender.id
+    user_name = e.sender.first_name
     mention = f"[{user_name}](tg://user?id={str(user_id)})"
     mm = random.randint(1, 100)
     HORNY = f"**🔥** {mention} **ɪꜱ** {mm}**% ʜᴏʀɴʏ!**"
-    await message.reply_photo(HORNY, reply_markup=BUTTON, file=HOT)
+    await e.reply(HORNY, buttons=BUTTON, file=HOT)
 
 
-@Client.on_message(filters.command("gay"))
-async def gay(_, message):
-    user_id = message.from_user.id
-    user_name = message.from_user.first_name
+@asst.on(events.NewMessage(pattern="/gay ?(.*)"))
+async def gay(e):
+    user_id = e.sender.id
+    user_name = e.sender.first_name
     mention = f"[{user_name}](tg://user?id={str(user_id)})"
     mm = random.randint(1, 100)
     GAY = f"**🍷** {mention} **ɪꜱ** {mm}**% ɢᴀʏ!**"
-    await message.reply_photo(GAY, reply_markup=BUTTON, file=SMEXY)
+    await e.reply(GAY, buttons=BUTTON, file=SMEXY)
 
 
-@Client.on_message(filters.command("lezbian"))
-async def lezbian(_, message):
-    user_id = message.from_user.id
-    user_name = message.from_user.first_name
+@asst.on(events.NewMessage(pattern="/lezbian ?(.*)"))
+async def lezbian(e):
+    user_id = e.sender.id
+    user_name = e.sender.first_name
     mention = f"[{user_name}](tg://user?id={str(user_id)})"
     mm = random.randint(1, 100)
     FEK = f"**💜** {mention} **ɪꜱ** {mm}**% ʟᴇᴢʙɪᴀɴ!**"
-    await message.reply_photo(FEK, reply_markup=BUTTON, file=LEZBIAN)
+    await e.reply(FEK, buttons=BUTTON, file=LEZBIAN)
 
 
-@Client.on_message(filters.command("boob"))
-async def boob(_, message):
-    user_id = message.from_user.id
-    user_name = message.from_user.first_name
+@asst.on(events.NewMessage(pattern="/boob ?(.*)"))
+async def boob(e):
+    user_id = e.sender.id
+    user_name = e.sender.first_name
     mention = f"[{user_name}](tg://user?id={str(user_id)})"
     mm = random.randint(1, 100)
     BOOBS = f"**🍒** {mention}**'ꜱ ʙᴏᴏʙꜱ ꜱɪᴢᴇ ɪᴢ** {mm}**!**"
-    await message.reply_photo(BOOBS, reply_markup=BUTTON, file=BIGBALL)
+    await e.reply(BOOBS, buttons=BUTTON, file=BIGBALL)
 
 
-@Client.on_message(filters.command("cock"))
-async def cock(_, message):
-    user_id = message.from_user.id
-    user_name = message.from_user.first_name
+@asst.on(events.NewMessage(pattern="/cock ?(.*)"))
+async def cock(e):
+    user_id = e.sender.id
+    user_name = e.sender.first_name
     mention = f"[{user_name}](tg://user?id={str(user_id)})"
     mm = random.randint(1, 100)
     COCK = f"**🍆** {mention}**'ꜱ ᴄᴏᴄᴋ ꜱɪᴢᴇ ɪᴢ** {mm}**ᴄᴍ**"
-    await message.reply_photo(COCK, reply_markup=BUTTON, file=LANG)
+    await e.reply(COCK, buttons=BUTTON, file=LANG)
 
 
-@Client.on_message(filters.command("cute"))
-async def cute(_, message):
-    user_id = message.from_user.id
-    user_name = message.from_user.first_name
+@asst.on(events.NewMessage(pattern="/cute ?(.*)"))
+async def cute(e):
+    user_id = e.sender.id
+    user_name = e.sender.first_name
     mention = f"[{user_name}](tg://user?id={str(user_id)})"
     mm = random.randint(1, 100)
     CUTE = f"**🍑** {mention} {mm}**% ᴄᴜᴛᴇ**"
-    await message.reply_photo(CUTE, reply_markup=BUTTON, file=CUTIE)
+    await e.reply(CUTE, buttons=BUTTON, file=CUTIE)
 
 
-@Client.on_message(filters.command("beautiful"))
-async def beautiful(_, message):
-    user_id = message.from_user.id
-    user_name = message.from_user.first_name
+@asst.on(events.NewMessage(pattern="/beautiful ?(.*)"))
+async def cute(e):
+    user_id = e.sender.id
+    user_name = e.sender.first_name
     mention = f"[{user_name}](tg://user?id={str(user_id)})"
     mm = random.randint(1, 100)
     BEAUTIFUL = f"**🤩** {mention} {mm}**% ʙᴇᴀᴜᴛɪғᴜʟ**"
-    await message.reply_photo(BEAUTIFUL, reply_markup=BUTTON, file=BEAUTIFULL)
+    await e.reply(BEAUTIFUL, buttons=BUTTON, file=BEAUTIFULL)
 
-@Client.on_message(filters.command("handsome"))
-async def handsome(_, message):
-    user_id = message.from_user.id
-    user_name = message.from_user.first_name
+@asst.on(events.NewMessage(pattern="/handsome ?(.*)"))
+async def cute(e):
+    user_id = e.sender.id
+    user_name = e.sender.first_name
     mention = f"[{user_name}](tg://user?id={str(user_id)})"
     mm = random.randint(1, 100)
     HANDSOME = f"**ʜᴇʏ ʏᴏᴜ 💌** {mention} {mm}**% ʜᴀɴᴅsᴏᴍᴇ**"
-    await message.reply_photo(HANDSOME, reply_markup=BUTTON, file=HANDCY)
+    await e.reply(HANDSOME, buttons=BUTTON, file=HANDCY)
 
-__HELP__ = """
+__help__ = """
 ➻ /horny - ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴄᴜʀʀᴇɴᴛ ʜᴏʀɴʏᴇꜱꜱ
+
 ➻ /gay - ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴄᴜʀʀᴇɴᴛ ɢᴜʏɴᴇꜱꜱ
+
 ➻ /lezbian - ᴄʜᴇᴄᴋ ᴜʀ ᴄᴜʀʀᴇɴᴛ ʟᴀᴢʙɪᴀɴ
+
 ➻ /boob - ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴄᴜʀʀᴇɴᴛ ʙᴏᴏʙꜱ ꜱɪᴢᴇ
+
 ➻ /cute - ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴄᴜʀʀᴇɴᴛ ᴄᴜᴛᴇɴᴇꜱꜱ
-➻ /beautiful - ᴄʜᴇᴄᴋ ʏᴏᴜʀ ʙᴇᴀᴜᴛʏ
-➻ /handsome - ᴄʜᴇᴄᴋ ʏᴏᴜʀ ʜᴀɴᴅsᴏᴍᴇɴᴇᴅꜱ
+
+•• /beautiful - ᴄʜᴇᴄᴋ ʏᴏᴜʀ ʙᴇᴀᴜᴛʏ
+
+• /handsome
 """
 
-__PLUGIN__ = "Sᴇᴍxʏ"
+__mod_name__ = "Sᴇᴍxʏ"
