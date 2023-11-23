@@ -1,18 +1,23 @@
-from datetime import datetime
-from importlib import import_module as imp_mod
-from logging import (INFO, WARNING, FileHandler, StreamHandler, basicConfig,
-                     getLogger)
-from os import environ, listdir, mkdir, path
+import lyricsgenius
+import pyrogram
+import pytz
+
+
 from platform import python_version
 from random import choice
 from sys import exit as sysexit
 from sys import stdout, version_info
 from time import time
 from traceback import format_exc
+from datetime import datetime
+from importlib import import_module as imp_mod
+from logging import (INFO, WARNING, FileHandler, StreamHandler, basicConfig,
+                     getLogger)
+from telethon.sync import TelegramClient
+from os import environ, listdir, mkdir, path
 
-import lyricsgenius
-import pyrogram
-import pytz
+
+
 
 LOG_DATETIME = datetime.now().strftime("%d_%m_%Y-%H_%M_%S")
 LOGDIR = f"{__name__}/logs"
