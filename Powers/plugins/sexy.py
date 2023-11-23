@@ -28,7 +28,7 @@ async def horny(_, message):
     mention = f"[{user_name}](tg://user?id={str(user_id)})"
     mm = random.randint(1, 100)
     HORNY = f"**🔥** {mention} **ɪꜱ** {mm}**% ʜᴏʀɴʏ!**"
-    await message.reply_text(HORNY, reply_markup=BUTTON, file=HOT)
+    await message.reply_photo(HORNY, reply_markup=BUTTON, file=HOT)
 
 
 @Client.on_message(filters.command("gay"))
@@ -38,7 +38,7 @@ async def gay(_, message):
     mention = f"[{user_name}](tg://user?id={str(user_id)})"
     mm = random.randint(1, 100)
     GAY = f"**🍷** {mention} **ɪꜱ** {mm}**% ɢᴀʏ!**"
-    await message.reply_text(GAY, reply_markup=BUTTON, file=SMEXY)
+    await message.reply_photo(GAY, reply_markup=BUTTON, file=SMEXY)
 
 
 @Client.on_message(filters.command("lezbian"))
@@ -48,7 +48,7 @@ async def lezbian(_, message):
     mention = f"[{user_name}](tg://user?id={str(user_id)})"
     mm = random.randint(1, 100)
     FEK = f"**💜** {mention} **ɪꜱ** {mm}**% ʟᴇᴢʙɪᴀɴ!**"
-    await message.reply_text(FEK, reply_markup=BUTTON, file=LEZBIAN)
+    await message.reply_photo(FEK, reply_markup=BUTTON, file=LEZBIAN)
 
 
 @Client.on_message(filters.command("boob"))
@@ -58,7 +58,7 @@ async def boob(_, message):
     mention = f"[{user_name}](tg://user?id={str(user_id)})"
     mm = random.randint(1, 100)
     BOOBS = f"**🍒** {mention}**'ꜱ ʙᴏᴏʙꜱ ꜱɪᴢᴇ ɪᴢ** {mm}**!**"
-    await message.reply_text(BOOBS, reply_markup=BUTTON, file=BIGBALL)
+    await message.reply_photo(BOOBS, reply_markup=BUTTON, file=BIGBALL)
 
 
 @Client.on_message(filters.command("cock"))
@@ -68,7 +68,7 @@ async def cock(_, message):
     mention = f"[{user_name}](tg://user?id={str(user_id)})"
     mm = random.randint(1, 100)
     COCK = f"**🍆** {mention}**'ꜱ ᴄᴏᴄᴋ ꜱɪᴢᴇ ɪᴢ** {mm}**ᴄᴍ**"
-    await message.reply_text(COCK, reply_markup=BUTTON, file=LANG)
+    await message.reply_photo(COCK, reply_markup=BUTTON, file=LANG)
 
 
 @Client.on_message(filters.command("cute"))
@@ -78,7 +78,7 @@ async def cute(_, message):
     mention = f"[{user_name}](tg://user?id={str(user_id)})"
     mm = random.randint(1, 100)
     CUTE = f"**🍑** {mention} {mm}**% ᴄᴜᴛᴇ**"
-    await message.reply_text(CUTE, reply_markup=BUTTON, file=CUTIE)
+    await message.reply_photo(CUTE, reply_markup=BUTTON, file=CUTIE)
 
 
 @Client.on_message(filters.command("beautiful"))
@@ -88,7 +88,7 @@ async def beautiful(_, message):
     mention = f"[{user_name}](tg://user?id={str(user_id)})"
     mm = random.randint(1, 100)
     BEAUTIFUL = f"**🤩** {mention} {mm}**% ʙᴇᴀᴜᴛɪғᴜʟ**"
-    await message.reply_text(BEAUTIFUL, reply_markup=BUTTON, file=BEAUTIFULL)
+    await message.reply_photo(BEAUTIFUL, reply_markup=BUTTON, file=BEAUTIFULL)
 
 @Client.on_message(filters.command("handsome"))
 async def handsome(_, message):
@@ -97,7 +97,7 @@ async def handsome(_, message):
     mention = f"[{user_name}](tg://user?id={str(user_id)})"
     mm = random.randint(1, 100)
     HANDSOME = f"**ʜᴇʏ ʏᴏᴜ 💌** {mention} {mm}**% ʜᴀɴᴅsᴏᴍᴇ**"
-    await message.reply_text(HANDSOME, reply_markup=BUTTON, file=HANDCY)
+    await message.reply_photo(HANDSOME, reply_markup=BUTTON, file=HANDCY)
 
 __HELP__ = """
 ➻ /horny - ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴄᴜʀʀᴇɴᴛ ʜᴏʀɴʏᴇꜱꜱ
