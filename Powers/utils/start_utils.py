@@ -43,8 +43,10 @@ async def gen_start_kb(q: Message or CallbackQuery):
                 ),
                 (
                     "ᴅᴇᴠᴇʟᴏᴘᴇʀ 👑",
-                    Config.OWNER_ID,
-                    "user_id",
+                  "tg://settings",
+                  "url",
+#                    Config.OWNER_ID,
+#                    "user_id",
                 ),
             ],
             [
