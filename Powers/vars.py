@@ -12,9 +12,9 @@ class Config:
 
     LOGGER = True
     BOT_TOKEN = config("6513948062:AAGjiuULDk9djlFlC0SuG2-lMgSKWfq2bJc", default=None)
-    API_ID = int(config("27169529", default="123"))
+    API_ID = int(config(27169529, default="123"))
     API_HASH = config("5d67602a4e0bbfabe669c0febeaf63b6", default=None)
-    OWNER_ID = int(config("6542673293", default=1344569458))
+    OWNER_ID = int(config(6542673293, default=1344569458))
     MESSAGE_DUMP = int(config(-1001978176529))
     DEV_USERS = [
         int(i)
