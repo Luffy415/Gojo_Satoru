@@ -53,31 +53,3 @@ class Config:
     BOT_ID = ""
     BOT_NAME = "𝘎𝘳𝘰𝘶𝘱 𝘕𝘢𝘷𝘪𝘨𝘢𝘵𝘰𝘳"
     owner_username = "SyncZen"
-
-
-class Development:
-    """Development class for variables."""
-
-    # Fill in these vars if you want to use Traditional method of deploying
-    LOGGER = True
-    BOT_TOKEN = ""
-    API_ID = ""  # Your APP_ID from Telegram
-    AuDD_API = ""
-    API_HASH = ""  # Your APP_HASH from Telegram
-    OWNER_ID = ""  # Your telegram user id defult to mine
-    MESSAGE_DUMP = ""  # Your Private Group ID for logs
-    DEV_USERS = []
-    SUDO_USERS = []
-    WHITELIST_USERS = []
-    DB_URI = ""  # Your mongo DB URI
-    DB_NAME = ""  # Your DB name
-    NO_LOAD = []
-    GENIUS_API_TOKEN = ""
-    RMBG_API = ""
-    PREFIX_HANDLER = []
-    SUPPORT_GROUP = ""
-    SUPPORT_CHANNEL = ""
-    VERSION = ""
-    TIME_ZONE = ''
-    BDB_URI = ""
-    WORKERS = ""
