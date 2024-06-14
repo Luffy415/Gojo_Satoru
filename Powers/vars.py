@@ -69,7 +69,7 @@ class Development:
     DEV_USERS = [6758178852]
     SUDO_USERS = [6758178852]
     WHITELIST_USERS = [6758178852]
-    DB_URI = "mongodb+srv://madharchod:Hijda@madharchod.bkufl86.mongodb.net/?retryWrites=true&w=majority&appName=Madharchod"  # Your mongo DB URI
+    DB_URI = "mongodb+srv://zen:zen@Cluster0.dx2n813.mongodb.net/?retryWrites=true&w=majority"  # Your mongo DB URI
     DB_NAME = "GojoSatoru"  # Your DB name
     NO_LOAD = []
     GENIUS_API_TOKEN = ""
