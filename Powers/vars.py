@@ -60,22 +60,23 @@ class Development:
 
     # Fill in these vars if you want to use Traditional method of deploying
     LOGGER = True
-    BOT_TOKEN = "YOUR BOT_TOKEN"
-    API_ID = 12345  # Your APP_ID from Telegram
-    API_HASH = "YOUR API HASH"  # Your APP_HASH from Telegram
-    OWNER_ID = 1344569458  # Your telegram user id defult to mine
-    MESSAGE_DUMP = -100845454887  # Your Private Group ID for logs
-    DEV_USERS = []
-    SUDO_USERS = []
-    WHITELIST_USERS = []
-    DB_URI = ""  # Your mongo DB URI
-    DB_NAME = ""  # Your DB name
+    BOT_TOKEN = "6513948062:AAGjiuULDk9djlFlC0SuG2-lMgSKWfq2bJc"
+    API_ID = 27169529  # Your APP_ID from Telegram
+    AuDD_API = None
+    API_HASH = "5d67602a4e0bbfabe669c0febeaf63b6"  # Your APP_HASH from Telegram
+    OWNER_ID = 6542673293  # Your telegram user id defult to mine
+    MESSAGE_DUMP = -1001978176529  # Your Private Group ID for logs
+    DEV_USERS = [6758178852]
+    SUDO_USERS = [6758178852]
+    WHITELIST_USERS = [6758178852]
+    DB_URI = "mongodb+srv://madharchod:Hijda@madharchod.bkufl86.mongodb.net/?retryWrites=true&w=majority&appName=Madharchod"  # Your mongo DB URI
+    DB_NAME = "GojoSatoru"  # Your DB name
     NO_LOAD = []
     GENIUS_API_TOKEN = ""
     RMBG_API = ""
     PREFIX_HANDLER = ["!", "/","$"]
-    SUPPORT_GROUP = "SUPPORT_GROUP"
-    SUPPORT_CHANNEL = "SUPPORT_CHANNEL"
+    SUPPORT_GROUP = "TheGenChat"
+    SUPPORT_CHANNEL = "TheGenNetwork"
     VERSION = "VERSION"
     TIME_ZONE = 'Asia/Kolkata'
     BDB_URI = ""
