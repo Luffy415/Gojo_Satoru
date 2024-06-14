@@ -52,10 +52,7 @@ if version_info[0] < 3 or version_info[1] < 7:
 
 # the secret configuration specific things
 try:
-    if environ.get("ENV"):
-        from Powers.vars import Config
-    else:
-        from Powers.vars import Development as Config
+  from Powers.vars import Config
 except Exception as ef:
     LOGGER.error(ef)  # Print Error
     LOGGER.error(format_exc())
