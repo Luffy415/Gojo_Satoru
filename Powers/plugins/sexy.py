@@ -13,6 +13,8 @@ LANG = "https://telegra.ph/file/423414459345bf18310f5.gif"
 CUTIE = "https://64.media.tumblr.com/d701f53eb5681e87a957a547980371d2/tumblr_nbjmdrQyje1qa94xto1_500.gif"
 BEAUTIFULL = "https://telegra.ph/file/37f85c796e49b0cc0e232.gif"
 HANDCY = "https://telegra.ph/file/fbbc734152df5411efc7c.gif"
+SIGMA = 'https://te.legra.ph/file/d62dc5ac7150f8d5a3d96.mp4'
+LOYAL = 'https://te.legra.ph/file/e31be3e34c9a91a8c39b2.mp4'
 
 
 @asst.on(events.NewMessage(pattern="/horny ?(.*)"))
@@ -93,20 +95,43 @@ async def cute(e):
     HANDSOME = f"**ʜᴇʏ ʏᴏᴜ 💌** {mention} {mm}**% ʜᴀɴᴅsᴏᴍᴇ**"
     await e.reply(HANDSOME, buttons=BUTTON, file=HANDCY)
 
+@asst.on(events.NewMessage(pattern="/sigma ?(.*)"))
+async def sigma(e):
+    user_id = e.sender.id
+    user_name = e.sender.first_name
+    mention = f"[{user_name}](tg://user?id={str(user_id)})"
+    mm = random.randint(1, 100)
+    FEK = f"**🗿** {mention} **ɪꜱ** {mm}**% sɪɢᴍᴀ!**"
+    await e.reply(SIGMA, buttons=BUTTON, file=SIGMA)
+
+@asst.on(events.NewMessage(pattern="/loyal ?(.*)"))
+async def loyal(e):
+    user_id = e.sender.id
+    user_name = e.sender.first_name
+    mention = f"[{user_name}](tg://user?id={str(user_id)})"
+    mm = random.randint(1, 100)
+    GAY = f"**🍷** {mention} **ɪꜱ** {mm}**% ʟᴏʏᴀʟ!**"
+    await e.reply(LOYAL, buttons=BUTTON, file=LOYAL)
+
+
 __help__ = """
-➻ /horny - ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴄᴜʀʀᴇɴᴛ ʜᴏʀɴʏᴇꜱꜱ
+➻ /horny - ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴄᴜʀʀᴇɴᴛ ʜᴏʀɴʏᴇꜱꜱ.
 
-➻ /gay - ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴄᴜʀʀᴇɴᴛ ɢᴜʏɴᴇꜱꜱ
+➻ /gay - ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴄᴜʀʀᴇɴᴛ ɢᴜʏɴᴇꜱꜱ.
 
-➻ /lezbian - ᴄʜᴇᴄᴋ ᴜʀ ᴄᴜʀʀᴇɴᴛ ʟᴀᴢʙɪᴀɴ
+➻ /lezbian - ᴄʜᴇᴄᴋ ᴜʀ ᴄᴜʀʀᴇɴᴛ ʟᴀᴢʙɪᴀɴ.
 
-➻ /boob - ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴄᴜʀʀᴇɴᴛ ʙᴏᴏʙꜱ ꜱɪᴢᴇ
+➻ /boob - ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴄᴜʀʀᴇɴᴛ ʙᴏᴏʙꜱ ꜱɪᴢᴇ.
 
-➻ /cute - ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴄᴜʀʀᴇɴᴛ ᴄᴜᴛᴇɴᴇꜱꜱ
+➻ /cute - ᴄʜᴇᴄᴋ ʏᴏᴜʀ ᴄᴜʀʀᴇɴᴛ ᴄᴜᴛᴇɴᴇꜱꜱ.
 
-•• /beautiful - ᴄʜᴇᴄᴋ ʏᴏᴜʀ ʙᴇᴀᴜᴛʏ
+➻ /sigma - ᴄʜᴇᴄᴋ ʜᴏᴡ ᴍᴜᴄʜ sɪɢᴍᴀ ʏᴏᴜ'ʀᴇ.
 
-• /handsome
+➻ /beautiful - ᴄʜᴇᴄᴋ ʏᴏᴜʀ ʙᴇᴀᴜᴛʏ.
+
+➻ /handsome - ᴄʜᴇᴄᴋ ʜᴏᴡ ᴍᴜᴄʜ ʜᴀɴᴅsᴏᴍᴇ ʏᴏᴜ'ʀᴇ.
+
+➻ /loyal - ᴄʜᴇᴄᴋ ʏᴏᴜʀ ʟᴏʏᴀʟɪᴛʏ.
 """
 
 __mod_name__ = "Sᴇᴍxʏ"
