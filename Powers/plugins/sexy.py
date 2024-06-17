@@ -101,7 +101,7 @@ async def sigma(e):
     user_name = e.sender.first_name
     mention = f"[{user_name}](tg://user?id={str(user_id)})"
     mm = random.randint(1, 100)
-    FEK = f"**🗿** {mention} **ɪꜱ** {mm}**% sɪɢᴍᴀ!**"
+    SIGMA = f"**🗿** {mention} **ɪꜱ** {mm}**% sɪɢᴍᴀ!**"
     await e.reply(SIGMA, buttons=BUTTON, file=SIGMA)
 
 @asst.on(events.NewMessage(pattern="/loyal ?(.*)"))
@@ -110,7 +110,7 @@ async def loyal(e):
     user_name = e.sender.first_name
     mention = f"[{user_name}](tg://user?id={str(user_id)})"
     mm = random.randint(1, 100)
-    GAY = f"**🍷** {mention} **ɪꜱ** {mm}**% ʟᴏʏᴀʟ!**"
+    LOYAL = f"**🍷** {mention} **ɪꜱ** {mm}**% ʟᴏʏᴀʟ!**"
     await e.reply(LOYAL, buttons=BUTTON, file=LOYAL)
 
 
