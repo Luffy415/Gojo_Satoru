@@ -13,8 +13,8 @@ LANG = "https://telegra.ph/file/423414459345bf18310f5.gif"
 CUTIE = "https://64.media.tumblr.com/d701f53eb5681e87a957a547980371d2/tumblr_nbjmdrQyje1qa94xto1_500.gif"
 BEAUTIFULL = "https://telegra.ph/file/37f85c796e49b0cc0e232.gif"
 HANDCY = "https://telegra.ph/file/fbbc734152df5411efc7c.gif"
-SIGMA = 'https://te.legra.ph/file/d62dc5ac7150f8d5a3d96.mp4'
-LOYAL = 'https://te.legra.ph/file/e31be3e34c9a91a8c39b2.mp4'
+SIGMA = 'https://i.gifer.com/FPm.gif'
+LOYAL = 'https://i.gifer.com/EuTF.gif'
 
 
 @asst.on(events.NewMessage(pattern="/horny ?(.*)"))
